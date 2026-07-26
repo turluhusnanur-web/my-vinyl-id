@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>husna's vinyl id</title>
+  <!-- Sekme Görseli (Favicon) -->
+<!-- Sekme Görseli (Favicon) -->
+<link rel="icon" type="image/png" href="https://i.ibb.co/HLhBNWJP/image.png">
+  <style>
+/*@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');*/
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0f0b0c;
+      background-image: radial-gradient(circle at 50% 30%, rgba(91, 34, 30, 0.25) 0%, transparent 60%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 40px 0;
+    }
+
+    /* Ana Konteyner */
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      transform: translateY(-80px);
+    }
+
+    /* Plak ve Kapak Alanı */
+    .record-player {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Plak Kapağı */
+    .album-cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://i.pinimg.com/736x/aa/6c/20/aa6c20043055f6cbeeb9b0b7afec5631.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 2;
+      transition: transform 0.6s ease-in-out;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+  .album-cover h2 {
+  font-family: 'Cinzel Decorative', serif; /* Yeni Sanatsal Font */
+  font-size: 1.4rem;
+  border: 1px solid #5b221e;
+  padding: 6px 14px;
+  
+  border-radius: 4px;
+  text-transform: lowercase; /* Dilersen küçük harf yaparak daha estetik durmasını sağlayabilirsin */
+  letter-spacing: 2px;
+
+
+    }
+
+    .album-cover p {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      opacity: 0.8;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Plak ve Arkasındaki Parlak Işık Efekti */
+.vinyl-record {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 10px;
+  left: 10px;
+  background: radial-gradient(circle, #333 15%, #111 16%, #111 25%, #222 26%, #111 35%, #111 40%, #000 41%);
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease-in-out;
+  
+  /* ARKADAKİ PARLAK IŞIK (GLOW) EFEKTİ */
+  box-shadow: 
+    0 0 20px rgba(226, 109, 109, 0.6),
+    0 0 40px rgba(91, 34, 30, 0.8),
+    0 0 60px rgba(226, 109, 109, 0.4);
+}
+
+/* Plak Açıldığında Işığın Hafifçe Nefes Alıp Vermesi / Parlaması */
+.record-player.open .vinyl-record {
+  transform: translateX(80px);
+  animation: spin 4s linear infinite, glowPulse 2s ease-in-out infinite alternate;
+  animation-delay: 0.6s, 0s;
+}
+
+/* Işık Parlama Animasyonu */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 
+      0 0 15px rgba(226, 109, 109, 0.5),
+      0 0 30px rgba(91, 34, 30, 0.7),
+      0 0 45px rgba(226, 109, 109, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 25px rgba(226, 109, 109, 0.9),
+      0 0 55px rgba(226, 109, 109, 0.7),
+      0 0 85px rgba(91, 34, 30, 0.9);
+  }
+}
+
+    /* Plağın Ortasındaki Etiket */
+    .record-label {
+      width: 90px;
+      height: 90px;
+      background-image: url("https://i.pinimg.com/736x/78/4e/8c/784e8cfeba474228072b67991950e309.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Sağ Alt Köşedeki Küçük, Yazısız Pause/Play Butonu */
+    .vinyl-play-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(15, 11, 12, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .vinyl-play-btn:hover {
+      background: rgba(91, 34, 30, 0.9);
+      transform: scale(1.1);
+      border-color: rgba(226, 109, 109, 0.6);
+    }
+
+    .vinyl-play-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* Kapak Açıldığındaki Efektler */
+    .record-player.open .album-cover {
+      transform: translateX(-60px) rotate(-3deg);
+    }
+
+    .record-player.open .vinyl-record {
+      transform: translateX(80px);
+      animation: spin 4s linear infinite;
+      animation-delay: 0.6s;
+    }
+
+    /* Müzik durdurulduğunda plağın dönmesini durdurma */
+    .record-player.open .vinyl-record.paused {
+      animation-play-state: paused;
+    }
+
+    /* Şarkı Listesi ve İçerik Kutusu */
+    .content-box {
+      position: absolute;
+      top: 300px;
+      width: 320px;
+      background-image: linear-gradient(rgba(15, 11, 12, 0.65), rgba(15, 11, 12, 0.65)), url("https://i.pinimg.com/1200x/65/d9/66/65d966ce3be0efd226140c72bc9f5c9b.jpg");
+      background-size: cover;
+  background-position: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(91, 34, 30, 0.5);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 5;
+    }
+
+    .content-box.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .tracklist {
+      list-style: none;
+    }
+
+    .track-item {
+      padding: 12px;
+      border-bottom: 1px solid #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+
+    .track-item:hover {
+      background: rgba(91, 34, 30, 0.35);
+      color: #e26d6d;
+      padding-left: 18px;
+      border-radius: 6px;
+    }
+
+    /* Bilgi Detay Paneli */
+    .info-panel {
+      display: none;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #ccc;
+    }
+
+    .info-panel.active {
+      display: block;
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      margin-top: 15px;
+      background: #ff007f;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    /* Animasyonlar */
+    @keyframes spin {
+      0% { transform: translateX(80px) rotate(0deg); }
+      100% { transform: translateX(80px) rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+  <div class="container">
+    
+    <!-- Plak Kutusu -->
+    <div class="record-player" id="player">
+      <div class="album-cover" onclick="togglePlayer()">
+        <h2>HUSNA'S VINYL</h2>
+        <p>-click and play-</p>
+      </div>
+      <div class="vinyl-record" id="vinylRecord">
+        <div class="record-label"></div>
+      </div>
+
+      <!-- Plağın Üzerine Yerleşen Küçük Sağ Alt Buton -->
+      <button class="vinyl-play-btn" id="playPauseBtn" onclick="togglePlayPause(event)" aria-label="Play/Pause">
+        <!-- Pause İkonu (Varsayılan Oynatılıyor) -->
+        <svg id="pauseIcon" viewBox="0 0 24 24">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+        <!-- Play İkonu -->
+        <svg id="playIcon" viewBox="0 0 24 24" style="display: none;">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- İçerik Kutusu -->
+    <div class="content-box" id="contentBox">
+      <!-- Şarkı Listesi (Tracklist) -->
+      <ul class="tracklist" id="tracklist">
+        <li class="track-item" onclick="showInfo('track1')">
+          <span>01. about me</span>
+          <span>▶</span>
+        </li>
+        <li class="track-item" onclick="showInfo('track2')">
+          <span>02. new rules</span>
+          <span>▶</span>
+        </li>
+        <li class="track-item" onclick="showInfo('track3')">
+          <span>03. lovezone</span>
+          <span>▶</span>
+        </li>
+      </ul>
+
+      <!-- Şarkılara Basınca Açılacak Bilgiler -->
+      <div id="track1" class="info-panel">
+        <h3>TRACK 01: about me</h3>
+        <p> <b> <i> me</i></b><br>
+she/they, 19yo, INTP, Turkish <br>
+<b> <i> likes</i></b><br>
+art, music, reading, writing, editing, coding, chess, guitar
+<br>besiktas supporter
+</p>
+        <button class="back-btn" onclick="showTracklist()">back</button>
+      </div>
+
+      <div id="track2" class="info-panel">
+        <h3>TRACK 02: new rules</h3>
+        <p><b> <i> before you follow </i></b><br>
+i mostly talk about what i like, my daily life, songs and artists i love ♡ <br>
+<b><i>don’t follow if </i> </b><br>
+you’re disrespectful towards any religion, belief, or personal boundaries.
+also, if you’re hateful towards the people i support — this isn’t the place for that.</p>
+        <button class="back-btn" onclick="showTracklist()">back</button>
+      </div>
+
+      <div id="track3" class="info-panel">
+        <h3>TRACK 03: lovezone</h3>
+        <p> <i> <b> tomorrow x together, </b></i> <i> xdinary heroes,</i> <b> <i> cortis,</i></b> <i> dpr ian,</i> <b> <i> p1h, </i></b> <i> bonedo, </i>  <i><b>   twice, </b> actually most girl groups</i> 
+        <br> <i> olivia rodrigo,</i> <b> <i> mitski,</i></b> <i> conan gray,</i> <b> <i> arctic monkeys,</i></b> <i> tv girl,</i> <b> <i> the strokes,</i></b> <i> adamlar,</i> <b> <i> mvö,</i></b> <i> trpop newgen </i>
+        <br> <b> <i> the untamed,</i></b> <i> whc1&2,</i> <b> <i> one piece,</i></b> <i> b99,</i> <b> <i> not me</i></b>
+    </p>
+        <button class="back-btn" onclick="showTracklist()">back</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    let isOpen = false;
+
+    function togglePlayer() {
+      const player = document.getElementById('player');
+      const contentBox = document.getElementById('contentBox');
+      const music = document.getElementById('bgMusic');
+      
+      if (!isOpen) {
+        player.classList.add('open');
+        
+        music.play().then(() => {
+          updateIcon(true);
+        }).catch(e => console.log("Müzik oynatma engellendi:", e));
+
+        setTimeout(() => {
+          contentBox.classList.add('show');
+        }, 400);
+        isOpen = true;
+      }
+    }
+
+    function togglePlayPause(event) {
+      if (event) event.stopPropagation(); // Tıklamanın kapağa sıçramasını engeller
+      
+      const music = document.getElementById('bgMusic');
+      const vinyl = document.getElementById('vinylRecord');
+      
+      if (music.paused) {
+        music.play();
+        vinyl.classList.remove('paused');
+        updateIcon(true);
+      } else {
+        music.pause();
+        vinyl.classList.add('paused');
+        updateIcon(false);
+      }
+    }
+
+    function updateIcon(isPlaying) {
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
+      
+      if (isPlaying) {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    }
+
+    function showInfo(trackId) {
+      document.getElementById('tracklist').style.display = 'none';
+      
+      const panels = document.querySelectorAll('.info-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+      
+      document.getElementById(trackId).classList.add('active');
+    }
+
+    function showTracklist() {
+      const panels = document.querySelectorAll('.info-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+      
+      document.getElementById('tracklist').style.display = 'block';
+    }
+  </script>
+
+  <audio id="bgMusic" loop>
+    <source src="https://files.catbox.moe/w5pcus.mp3" type="audio/mpeg">
+  </audio>
+
+</body>
+</html>
