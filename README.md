@@ -2,6 +2,9 @@
 
 A minimalist, interactive personal card designed with a vintage vinyl record player theme.
 
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](CANLI_SITE_LINKINIZ)
+
+👉 **[Canlı Demo / Live Preview](husna-s-vinyl.netlify.app)**
 
 ## ✨ Features
 
