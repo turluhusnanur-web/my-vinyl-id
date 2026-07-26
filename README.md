@@ -1,4 +1,4 @@
-# 🎵 husna's vinyl
+# 🎵 husna's vinyl id
 
 A minimalist, interactive personal card designed with a vintage vinyl record player theme.
 
