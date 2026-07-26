@@ -4,7 +4,7 @@ A minimalist, interactive personal card designed with a vintage vinyl record pla
 
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](CANLI_SITE_LINKINIZ)
 
-👉 **[Canlı Demo / Live Preview]([husna-s-vinyl.netlify.app](https://husna-s-vinyl.netlify.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGns2AMo8Ljy8Qk7YluwAPpACwUrJRAEy7i-g0W923ZkuF4cVSIKcWwqPFOMYM_aem_6ZXWihSGK7XAmokeJuqtZg))**
+👉 **[Canlı Demo / Live Preview]([husna-s-vinyl.netlify.app](https://husna-s-vinyl.netlify.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGns2AMo8Ljy8Qk7YluwAPpACwUrJRAEy7i-g0W923ZkuF4cVSIKcWwqPFOMYM_aem_6ZXWihSGK7XAmokeJuqtZg)**
 
 ## ✨ Features
 
