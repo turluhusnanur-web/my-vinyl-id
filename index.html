@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>husna's vinyl id</title>
-  <!-- Sekme Görseli (Favicon) -->
-<!-- Sekme Görseli (Favicon) -->
+  
+<!--Favicon -->
 <link rel="icon" type="image/png" href="https://i.ibb.co/HLhBNWJP/image.png">
   <style>
 /*@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');*/
@@ -29,7 +29,7 @@
       padding: 40px 0;
     }
 
-    /* Ana Konteyner */
+    /* ana konteyner */
     .container {
       position: relative;
       display: flex;
@@ -40,7 +40,7 @@
       transform: translateY(-80px);
     }
 
-    /* Plak ve Kapak Alanı */
+    /* plak ve kapak */
     .record-player {
       position: relative;
       width: 280px;
@@ -49,7 +49,7 @@
       z-index: 10;
     }
 
-    /* Plak Kapağı */
+    /* plak kapağı */
     .album-cover {
       position: absolute;
       width: 100%;
@@ -69,13 +69,13 @@
     }
 
   .album-cover h2 {
-  font-family: 'Cinzel Decorative', serif; /* Yeni Sanatsal Font */
+  font-family: 'Cinzel Decorative', serif; 
   font-size: 1.4rem;
   border: 1px solid #5b221e;
   padding: 6px 14px;
   
   border-radius: 4px;
-  text-transform: lowercase; /* Dilersen küçük harf yaparak daha estetik durmasını sağlayabilirsin */
+  text-transform: lowercase; 
   letter-spacing: 2px;
 
 
@@ -88,7 +88,7 @@
       animation: pulse 1.5s infinite;
     }
 
-    /* Plak ve Arkasındaki Parlak Işık Efekti */
+    
 .vinyl-record {
   position: absolute;
   width: 260px;
@@ -103,21 +103,21 @@
   align-items: center;
   transition: transform 0.6s ease-in-out;
   
-  /* ARKADAKİ PARLAK IŞIK (GLOW) EFEKTİ */
+  
   box-shadow: 
     0 0 20px rgba(226, 109, 109, 0.6),
     0 0 40px rgba(91, 34, 30, 0.8),
     0 0 60px rgba(226, 109, 109, 0.4);
 }
 
-/* Plak Açıldığında Işığın Hafifçe Nefes Alıp Vermesi / Parlaması */
+
 .record-player.open .vinyl-record {
   transform: translateX(80px);
   animation: spin 4s linear infinite, glowPulse 2s ease-in-out infinite alternate;
   animation-delay: 0.6s, 0s;
 }
 
-/* Işık Parlama Animasyonu */
+
 @keyframes glowPulse {
   0% {
     box-shadow: 
@@ -133,7 +133,7 @@
   }
 }
 
-    /* Plağın Ortasındaki Etiket */
+    /* plağın ortası */
     .record-label {
       width: 90px;
       height: 90px;
@@ -151,7 +151,7 @@
       color: #fff;
     }
 
-    /* Sağ Alt Köşedeki Küçük, Yazısız Pause/Play Butonu */
+
     .vinyl-play-btn {
       position: absolute;
       bottom: 12px;
@@ -183,7 +183,7 @@
       fill: currentColor;
     }
 
-    /* Kapak Açıldığındaki Efektler */
+    /
     .record-player.open .album-cover {
       transform: translateX(-60px) rotate(-3deg);
     }
@@ -194,19 +194,19 @@
       animation-delay: 0.6s;
     }
 
-    /* Müzik durdurulduğunda plağın dönmesini durdurma */
+    
     .record-player.open .vinyl-record.paused {
       animation-play-state: paused;
     }
 
-    /* Şarkı Listesi ve İçerik Kutusu */
+    /* şarkı listesi*/
     .content-box {
       position: absolute;
       top: 300px;
       width: 320px;
       background-image: linear-gradient(rgba(15, 11, 12, 0.65), rgba(15, 11, 12, 0.65)), url("https://i.pinimg.com/1200x/65/d9/66/65d966ce3be0efd226140c72bc9f5c9b.jpg");
       background-size: cover;
-  background-position: center;
+      background-position: center;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(91, 34, 30, 0.5);
@@ -244,7 +244,7 @@
       border-radius: 6px;
     }
 
-    /* Bilgi Detay Paneli */
+    
     .info-panel {
       display: none;
       font-size: 0.9rem;
@@ -279,7 +279,7 @@
       font-size: 0.8rem;
     }
 
-    /* Animasyonlar */
+    
     @keyframes spin {
       0% { transform: translateX(80px) rotate(0deg); }
       100% { transform: translateX(80px) rotate(360deg); }
@@ -296,7 +296,7 @@
 
   <div class="container">
     
-    <!-- Plak Kutusu -->
+    <!-- plak kutusu -->
     <div class="record-player" id="player">
       <div class="album-cover" onclick="togglePlayer()">
         <h2>HUSNA'S VINYL</h2>
@@ -306,13 +306,13 @@
         <div class="record-label"></div>
       </div>
 
-      <!-- Plağın Üzerine Yerleşen Küçük Sağ Alt Buton -->
+      
       <button class="vinyl-play-btn" id="playPauseBtn" onclick="togglePlayPause(event)" aria-label="Play/Pause">
-        <!-- Pause İkonu (Varsayılan Oynatılıyor) -->
+      
         <svg id="pauseIcon" viewBox="0 0 24 24">
           <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
         </svg>
-        <!-- Play İkonu -->
+        
         <svg id="playIcon" viewBox="0 0 24 24" style="display: none;">
           <path d="M8 5v14l11-7z"/>
         </svg>
@@ -321,7 +321,7 @@
 
     <!-- İçerik Kutusu -->
     <div class="content-box" id="contentBox">
-      <!-- Şarkı Listesi (Tracklist) -->
+      <!-- tracklist -->
       <ul class="tracklist" id="tracklist">
         <li class="track-item" onclick="showInfo('track1')">
           <span>01. about me</span>
@@ -337,7 +337,7 @@
         </li>
       </ul>
 
-      <!-- Şarkılara Basınca Açılacak Bilgiler -->
+    
       <div id="track1" class="info-panel">
         <h3>TRACK 01: about me</h3>
         <p> <b> <i> me</i></b><br>
@@ -395,7 +395,7 @@ also, if you’re hateful towards the people i support — this isn’t the plac
     }
 
     function togglePlayPause(event) {
-      if (event) event.stopPropagation(); // Tıklamanın kapağa sıçramasını engeller
+      if (event) event.stopPropagation(); 
       
       const music = document.getElementById('bgMusic');
       const vinyl = document.getElementById('vinylRecord');
