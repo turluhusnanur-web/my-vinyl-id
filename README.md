@@ -2,8 +2,7 @@
 
 A minimalist, interactive personal card designed with a vintage vinyl record player theme.
 
-👉 **[Live Preview](https://husna-s-vinyl-id.netlify.app/)](https://husna-s-vinyl-id.netlify.app/))](https://husna-s-vinyl-id.netlify.app/)**
-
+👉 **[Live Preview / Canlı Deneyimle](https://husna-s-vinyl-id.netlify.app/)**
 ## ✨ Features
 
 - **Vinyl Record Concept:** A custom digital card experience styled as a spinning vinyl record.
